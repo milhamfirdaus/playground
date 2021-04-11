@@ -1,52 +1,86 @@
-// @ Math
-// @ Swapping value of 2 variable, without adding new var
-// @ Javascript
-/* 
-    let a = 30;
-    let b = 23;
-    console.log(`A = ${a}, B = ${b}`);
+// @args      2 Variable Numeric
+// @fungsi    Swapping value of 2 variable, without adding new var
+// @output    String
+const swapVariable = (a, b) => {
+  // let a = 30;
+  // let b = 23;
 
-    a = a + b;
-    b = a - b;
-    a = a - b;
-    console.log(`A = ${a}, B = ${b}`);
-*/
+  let before = `A = ${a}, B = ${b}`;
 
-// @ Math, Array
-// @ Find the largest value from array of Number
-// @ Javascript
-/*
-let arr = [2, 14, -32, 2, 9, 6, 7, 31, 29];
-let max = 0;
+  a = a + b;
+  b = a - b;
+  a = a - b;
 
-for (let i = 0; i < arr.length; i++) {
-  //next index;
-  let n = arr[i + 1];
+  return `Sebelumnya : ${before}\nSesudah : A = ${a}, B = ${b}`;
+};
 
-  if (i > n && i > max) {
-    max = n;
-  } else if (n > max) {
-    max = n;
-  }
-}
+// @args      Array of Number
+// @fungsi    Find the largest value from array
+// @output    Numeric
+const findTheLargest = (arr) => {
+  //let arr = [2, 14, -32, 2, 9, 6, 7, 31, 29];
+  let max = 0;
 
-console.log(max);
-*/
+  for (let i = 0; i < arr.length; i++) {
+    //next index;
+    let n = arr[i + 1];
 
-let num = 2;
-let sum = 0;
-let output = [];
-
-for (let i = 0; i < num; i++) {
-  if (i !== num) {
-    if (num < 3) {
-    } else if (i === num - 1) {
-      output.push(sum * -1);
-    } else {
-      output.push(i);
+    if (i > n && i > max) {
+      max = n;
+    } else if (n > max) {
+      max = n;
     }
-    sum += i;
   }
-}
 
-console.log(output);
+  return max;
+};
+
+// @args      Numeric
+// @fungsi    sum to 0 the different number
+// @args      Array of number
+// @status    bugs for num < 3
+const theDifferent = (num) => {
+  //let num = 2;
+  let sum = 0;
+  let output = [];
+
+  for (let i = 0; i < num; i++) {
+    if (i !== num) {
+      if (i + 1 === num) {
+        output.push(sum * -1);
+      } else {
+        output.push(i);
+      }
+      sum += i;
+    }
+  }
+
+  return output;
+};
+
+// @args      Numeric
+// @fungsi    Box of number
+// @args      String
+// @status    not completed
+const boxOfNumber = (num) => {
+  //let num = 3;
+  let max = 0;
+  let output = "";
+
+  for (let i = 1; i <= num; i++) {
+    for (let c = 1; c <= num; c++) {
+      if (max < 10) {
+        output += `0${max} `;
+      } else {
+        output += max;
+      }
+      max++;
+    }
+
+    output += "\n";
+  }
+
+  return output;
+};
+
+console.log(theDifferent(2));
