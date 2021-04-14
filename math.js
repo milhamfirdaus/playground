@@ -61,26 +61,27 @@ const theDifferent = (num) => {
 // @args      Numeric
 // @fungsi    Box of number
 // @args      String
-// @status    not completed
-const boxOfNumber = (num) => {
-  //let num = 3;
-  let max = 0;
+const boxOfNumber = (len) => {
+  let num = 1;
   let output = "";
 
-  for (let i = 1; i <= num; i++) {
-    for (let c = 1; c <= num; c++) {
-      if (max < 10) {
-        output += `0${max} `;
+  for (let r = 0; r < len; r++) {
+    let temp = [];
+    for (let c = 0; c < len; c++) {
+      if (r % 2 === 0) {
+        output += num < 10 ? `0${num} ` : num + " ";
       } else {
-        output += max;
+        temp.push(num < 10 ? `0${num} ` : num + " ");
       }
-      max++;
+      num++;
     }
-
+    if (r % 2 !== 0) {
+      output += temp.reverse().join("");
+    }
     output += "\n";
   }
 
   return output;
 };
 
-console.log(theDifferent(2));
+console.log(boxOfNumber(6));
