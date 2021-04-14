@@ -1,6 +1,6 @@
-// @args      2 Variable Numeric
-// @fungsi    Swapping value of 2 variable, without adding new var
-// @output    String
+// @args    2 Variable Numeric
+// @func    Swapping value of 2 variable, without adding new var
+// @output  String
 const swapVariable = (a, b) => {
   // let a = 30;
   // let b = 23;
@@ -14,9 +14,9 @@ const swapVariable = (a, b) => {
   return `Sebelumnya : ${before}\nSesudah : A = ${a}, B = ${b}`;
 };
 
-// @args      Array of Number
-// @fungsi    Find the largest value from array
-// @output    Numeric
+// @args    Array of Number
+// @func    Find the largest value from array
+// @output  Numeric
 const findTheLargest = (arr) => {
   //let arr = [2, 14, -32, 2, 9, 6, 7, 31, 29];
   let max = 0;
@@ -35,10 +35,10 @@ const findTheLargest = (arr) => {
   return max;
 };
 
-// @args      Numeric
-// @fungsi    sum to 0 the different number
-// @args      Array of number
-// @status    bugs for num < 3
+// @args    Numeric
+// @func    Sum to 0 the different number
+// @args    Array of number
+// @bugs    bugs for num < 3
 const theDifferent = (num) => {
   //let num = 2;
   let sum = 0;
@@ -58,9 +58,9 @@ const theDifferent = (num) => {
   return output;
 };
 
-// @args      Numeric
-// @fungsi    Box of number
-// @args      String
+// @args    Numeric
+// @func    Box of number
+// @args    String
 const boxOfNumber = (len) => {
   let num = 1;
   let output = "";
@@ -84,4 +84,6 @@ const boxOfNumber = (len) => {
   return output;
 };
 
+
+// Testing func here
 console.log(boxOfNumber(6));
